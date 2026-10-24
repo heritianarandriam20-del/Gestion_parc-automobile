@@ -1,3 +1,8 @@
-asgiref==3.12.1
+asgiref==3.13.0
 Django==6.1.2
 sqlparse==0.6.0
+gunicorn==26.2.0
+uvicorn==0.54.0
+whitenoise==6.12.0
+dj-database-url==3.1.2
+psycopg[binary]==3.3.6

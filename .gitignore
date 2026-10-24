@@ -1,0 +1,10 @@
+.env
+.env/
+backend/.env/
+__pycache__/
+*.pyc
+db.sqlite3
+node_modules/
+frontend/dist/
+backend/staticfiles/
+.vscode/
