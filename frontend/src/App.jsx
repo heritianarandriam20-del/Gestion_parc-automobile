@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import imageAPropos from "./assets/a-propos.png";
 
 function lireCookie(nom) {
   const trouve = document.cookie.split("; ").find((c) => c.startsWith(nom + "="));
@@ -953,6 +954,15 @@ function Signalements({ admin }) {
   );
 }
 
+function APropos() {
+  return (
+    <div>
+      <h2>À propos</h2>
+      <img className="image-a-propos" src={imageAPropos} alt="Modèle physique de données" />
+    </div>
+  );
+}
+
 const PAGES = [
   { cle: "dashboard", titre: "Tableau de bord", roles: ["admin"] },
   { cle: "dashboard_chauffeur", titre: "Tableau de bord", roles: ["chauffeur"] },
@@ -963,6 +973,7 @@ const PAGES = [
   { cle: "signalements", titre: "Pannes et réparations", roles: ["admin"] },
   { cle: "mes_vehicules", titre: "Mes véhicules", roles: ["chauffeur"] },
   { cle: "mes_signalements", titre: "Mes signalements", roles: ["chauffeur"] },
+  { cle: "a_propos", titre: "À propos", roles: ["admin"] },
 ];
 
 const LIBELLES_ROLE = { admin: "Administrateur", chauffeur: "Chauffeur" };
@@ -1084,6 +1095,7 @@ export default function App() {
   else if (page === "chauffeurs") contenu = <Chauffeurs />;
   else if (page === "affectations") contenu = <Affectations />;
   else if (page === "signalements" || page === "mes_signalements") contenu = <Signalements admin={user.role === "admin"} />;
+  else if (page === "a_propos") contenu = <APropos />;
   else contenu = <Entretiens />;
 
   return (
